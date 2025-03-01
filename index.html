@@ -1,25 +1,24 @@
-<!-- example html -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css"> 
-    <title>Document</title>
+    <title>Gemini Gallery</title>
 </head>
 <body>
-    <script src="script.js"></script>
     <header>
         <nav>
-            <ul style="list-style: none; display: flex; gap: 10px; padding: 0;">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#settings">Settings</a></li>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#settings">Settings</a></li>
             </ul>
-            <form action="/search" method="get" style="display: flex; align-items: right; gap: 4px;">
-                <input type="text" name="q" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
-                <button type="submit" style="padding: 5px 10px; background-color: #bee8c4; color: white; border: none; border-radius: 4px; cursor: pointer;">Go</button>
+            <form action="/search" method="get">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Go</button>
             </form>
         </nav>
     </header>
@@ -40,11 +39,13 @@
             <h2>Contact Us</h2>
             <p>This is the contact section.</p>
         </section>
+        <section id="imageUpload">
+            <h1>Upload an Image</h1>
+            <input type="file" id="fileInput" />
+            <button id="uploadButton" onclick="generateCaption()">Upload and Generate Caption</button>
+            <p id="caption"></p>
+        </section>
     </main>
-    <h1>Upload an Image</h1>
-    <input type="file" id="fileInput" />
-    <button id="uploadButton">Upload and Generate Caption</button>
-    <p id="caption"></p>
 
     <script>
         async function generateCaption() {
@@ -57,7 +58,7 @@
         }
     </script>
     <footer>
-        <p>&copy; 2025 Gemini Galleries </p>
+        <p>&copy; 2025 Gemini Galleries</p>
     </footer>
 </body>
 </html>
