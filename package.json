@@ -1,0 +1,23 @@
+{
+  "name": "hen25",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanachen777/hen25.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanachen777/hen25/issues"
+  },
+  "homepage": "https://github.com/alanachen777/hen25#readme",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.22.0"
+  }
+}
