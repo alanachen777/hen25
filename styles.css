@@ -50,6 +50,7 @@ nav a {
 
 nav a:hover {
     color: #ecf0f1; /* Lighter color on hover */
+    background-color: #34495e;
 }
 
 /* Search Bar */
@@ -135,7 +136,7 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: #2c3e50; /* Dark blue/gray */
-    color: #fff;
+    color: #fff; /*footer text white*/
     text-align: center;
     padding: 15px 0; /* Increased padding */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
