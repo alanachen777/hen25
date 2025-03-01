@@ -8,7 +8,20 @@ nav {
     background-color: #5b60a2;
     overflow: hidden;
     white-space: nowrap; /* Ensure the nav bar is one line */
+    display: flex; /* Make nav a flex container */
+    align-items: center; /* Vertically align items in nav */
+    justify-content: space-between; /* Space out links and search bar */
+    padding: 0 10px; /* Add padding to the sides */
 }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0; /* Remove default margins */
+}
+
 
 nav a {
     display: inline-block; /* Ensure the links are on the same line */
