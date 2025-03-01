@@ -41,23 +41,21 @@
             <p>This is the contact section.</p>
         </section>
     </main>
-    <body>
-        <h1>Upload an Image</h1>
-        <input type="file" id="imageInput">
-        <button onclick="generateCaption()">Generate Caption</button>
-        <p id="caption"></p>
-    
-        <script>
-            async function generateCaption() {
-                const response = await fetch("http://localhost:3000/generate-caption", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" }
-                });
-                const data = await response.json();
-                document.getElementById("caption").innerText = data.caption || "Error generating caption.";
-            }
-        </script>
-    </body>
+    <h1>Upload an Image</h1>
+    <input type="file" id="fileInput" />
+    <button id="uploadButton">Upload and Generate Caption</button>
+    <p id="caption"></p>
+
+    <script>
+        async function generateCaption() {
+            const response = await fetch("http://localhost:3000/generate-caption", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+            });
+            const data = await response.json();
+            document.getElementById("caption").innerText = data.caption || "Error generating caption.";
+        }
+    </script>
     <footer>
         <p>&copy; 2025 Gemini Galleries </p>
     </footer>

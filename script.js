@@ -1,17 +1,30 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("YOUR_API_KEY_HERE");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-async function generateCaption() {
-  const prompt = "Describe this image:";
-  const image = {
-    inlineData: {
-      data: Buffer.from(fs.readFileSync("path/to/your/image.png")).toString("base64"),
-      mimeType: "image/png",
-    },
-  };
-  const result = await model.generateContent([prompt, image]);
-  console.log(result.response.text());
-}
-
-generateCaption();
+// Assuming you have an HTML form with an input type="file" and a button to trigger the upload
+document.getElementById('uploadButton').addEventListener('click', async () => {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+  
+    if (file) {
+      const formData = new FormData();
+      formData.append('image', file);
+  
+      try {
+        const response = await fetch('http://localhost:3000/generate-caption', {
+          method: 'POST',
+          body: formData,
+        });
+  
+        const data = await response.json();
+        if (response.ok) {
+          document.getElementById('caption').innerText = `Caption: ${data.caption}`;
+        } else {
+          document.getElementById('caption').innerText = `Error: ${data.error}`;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('caption').innerText = 'Error: Could not generate caption.';
+      }
+    } else {
+      alert('Please select an image file to upload.');
+    }
+  });
+  
