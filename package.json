@@ -12,10 +12,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/alanachen777/hen25/issues"
   },
   "homepage": "https://github.com/alanachen777/hen25#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.22.0"
+  }
 }
