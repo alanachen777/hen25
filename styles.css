@@ -5,7 +5,7 @@ p {
 }
 
 nav {
-    background-color: #333;
+    background-color: #5b60a2;
     overflow: hidden;
     white-space: nowrap; /* Ensure the nav bar is one line */
 }
@@ -26,7 +26,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #5b60a2;
     color: white;
     text-align: center;
     padding: 10px 0;
