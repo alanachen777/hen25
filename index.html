@@ -17,10 +17,6 @@
             <li><a href="#login">Login</a></li>
             <li><a href="#settings">Settings</a></li>
             </ul>
-            <form action="/search" method="get" style="display: flex; align-items: center; gap: 5px;">
-                <input type="text" name="q" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
-                <button type="submit" style="padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Go</button>
-            </form>
         </nav>
     </header>
     <main>
@@ -41,8 +37,25 @@
             <p>This is the contact section.</p>
         </section>
     </main>
+    <body>
+        <h1>Upload an Image</h1>
+        <input type="file" id="imageInput">
+        <button onclick="generateCaption()">Generate Caption</button>
+        <p id="caption"></p>
+    
+        <script>
+            async function generateCaption() {
+                const response = await fetch("http://localhost:3000/generate-caption", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" }
+                });
+                const data = await response.json();
+                document.getElementById("caption").innerText = data.caption || "Error generating caption.";
+            }
+        </script>
+    </body>
     <footer>
-        <p>&copy; 2025 Gemini Gallery</p>
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
     </footer>
 </body>
 </html>
