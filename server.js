@@ -61,4 +61,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
+// This code sets up an Express server with endpoints for uploading images and generating captions using Google Generative AI.
+// It includes the caption generation functionality in the `/generate-caption` endpoint.
