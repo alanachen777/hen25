@@ -36,7 +36,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px; /* Increased gap */
-    padding: 0;
+    padding: 3;
     margin: 0;
 }
 
@@ -56,7 +56,7 @@ nav a:hover {
 /* Search Bar */
 nav form {
     display: flex;
-    gap: 8px; /* Increased gap */
+    gap: 50px; /* Increased gap */
     margin: 0;
     align-items: center;
 }
