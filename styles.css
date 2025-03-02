@@ -35,8 +35,8 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* Increased gap */
-    padding: 3;
+    gap: 40px; /* Increased gap */
+    padding: 10;
     margin: 0;
 }
 
@@ -46,17 +46,25 @@ nav a {
     text-align: center;
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth transition for hover */
+    padding: 10px 10px;
+    background-color: #2c3e50; /* Blue button */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
 }
 
 nav a:hover {
     color: #ecf0f1; /* Lighter color on hover */
     background-color: #34495e;
+    border-radius: 5px;
+    border-color: #c8dbf9;
 }
 
 /* Search Bar */
 nav form {
     display: flex;
-    gap: 50px; /* Increased gap */
+    gap: 30px; /* Increased gap */
     margin: 0;
     align-items: center;
 }
@@ -106,14 +114,17 @@ section h1, section h2 {
 
 /* Image Upload */
 #fileInput {
-    padding: 8px 10px;
+    padding: 20px 40px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #c8dbf9;
     border-radius: 5px;
+    background-color:#2c3e50;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #uploadButton {
-    padding: 8px 15px;
+    padding: 15px 18px;
     background-color: #3498db; /* Blue button */
     color: white;
     border: none;
@@ -123,21 +134,29 @@ section h1, section h2 {
 }
 
 #uploadButton:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+    background-color: #c8dbf9; /* Darker blue on hover */
+    color:#2f7ab7;
 }
 
 #caption {
     margin-top: 10px;
+    padding: 20px;
 }
 
 /* Footer */
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #2c3e50; /* Dark blue/gray */
-    color: #fff; /*footer text white*/
+    color: #fff; /* Footer text white */
     text-align: center;
-    padding: 15px 0; /* Increased padding */
+    padding: 10px 0; /* Reduced padding */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    clear: both; /* Ensure footer is below any floated elements */
+}
+
+footer p {
+    color: #fff; /* Ensure footer paragraph text is white */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
