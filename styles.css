@@ -40,25 +40,34 @@ nav ul {
     margin: 0;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
 nav a {
     display: inline-block;
     color: #fff;
     text-align: center;
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth transition for hover */
-    padding: 10px 10px;
+    padding: 8px 13px;
     background-color: #2c3e50; /* Blue button */
-    border: none;
     border-radius: 10px;
     cursor: pointer;
-    
+    border-color: #c8dbf9;
+    border: 1px solid #c8dbf9;
+    box-shadow: 1 3px #999; /* Add shadow */
 }
 
 nav a:hover {
-    color: #ecf0f1; /* Lighter color on hover */
-    background-color: #34495e;
-    border-radius: 5px;
+    animation: pulse 0.6s infinite;
+    color: #2c3e50; /* Lighter color on hover */
+    background-color: #c8dbf9;
+    border-radius: 10px;
     border-color: #c8dbf9;
+    box-shadow: 0 3px #3498db; /* Change shadow on hover */
+    transform: translateY(-2px); /* Slightly move up on hover */
 }
 
 /* Search Bar */
@@ -123,24 +132,30 @@ section h1, section h2 {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
 #uploadButton {
     padding: 15px 18px;
     background-color: #3498db; /* Blue Button  */
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer; 
     transition: background-color 0.3s ease;
 }
 
 #uploadButton:hover {
     background-color: #c8dbf9; /* Darker blue on hover */
     color:#2f7ab7;
+    animation: pulse 0.6s infinite
 }
 
 #caption {
     margin-top: 10px;
-    padding: 20px;
+    padding: 30px;
 }
 
 /* Footer */
