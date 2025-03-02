@@ -17,7 +17,7 @@ document.getElementById('uploadButton').addEventListener('click', async () => {
         const response = await fetch('http://localhost:3000/generate-caption', {
           method: 'POST',
           body: formData,
-        });
+        });        
   
         const data = await response.json();
         if (response.ok) {
