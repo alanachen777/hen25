@@ -1,5 +1,35 @@
 // Assuming we have an HTML form with an input type="file" and a button to trigger the upload
-document.getElementById('uploadButton').addEventListener('click', async () => {
+// document.getElementById('uploadButton').addEventListener('click', (e) => {
+//   e.preventDefault();
+//   e.stopPropagation();
+
+
+//   const fileInput = document.getElementById('fileInput');
+//   const file = fileInput.files[0];
+
+
+//   const formData = new FormData();
+//   formData.append('image', file);
+
+
+//   const response = fetch('http://localhost:3000/moody', {
+//     method: 'POST',
+//     body: formData,
+//   }).then(response => {
+//     console.log(response)
+//     return response.json()
+//   }).then(data => {
+//     console.log(data);
+//   })
+
+
+  
+//   console.log('upload button clicked');
+// })
+
+
+document.getElementById('uploadButton').addEventListener('click', async (e) => {
+    e.preventDefault();
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
   

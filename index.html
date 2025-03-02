@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css"> 
     <title>Gemini Gallery</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,13 +20,15 @@
             <form action="/search" method="get">
                 <input type="text" name="q" placeholder="Search...">
                 <button type="submit">Go</button>
-            </form>
+            </form> 
         </nav>
     </header>
     <main>
         <section id="home">
             <h1>Welcome to Gemini Gallery</h1>
-            <p>Gemini Gallery is a platform dedicated for artists to share their work.</p>
+            <p>Gemini Gallery is a platform dedicated for artists to share their work. 
+                With this platform, Gemini AI will caption your images for you, 
+            </p>
         </section>
         <section id="about">
             <h2>About Us</h2>
@@ -47,20 +50,8 @@
 
         </section>
     </main>
-
-    <script>
-        async function generateCaption() {
-            const response = await fetch("http://localhost:3000/generate-caption", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" }
-            });
-            const data = await response.json();
-            document.getElementById("caption").innerText = data.caption || "Error generating caption.";
-        }
-    </script>
     <footer>
         <p>&copy; 2025 Gemini Galleries</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

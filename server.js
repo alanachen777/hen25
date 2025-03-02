@@ -6,7 +6,11 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin: '*'
+  }
+));
 app.use(express.json());
 
 // Configure multer for file uploads
@@ -27,6 +31,12 @@ const apiKey = 'AIzaSyCg7hc8VUxE8s1F8CVLeU_2i_s2B4RM1cc';
 const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
+
+app.post("/moody", upload.single("image"), async (req, res) => {
+  return res.json({ caption: "This is a moody image" });
+})
+
+
 app.post('/generate-caption', upload.single('image'), async (req, res) => {
   try {
     if (!req.file) {
@@ -44,13 +54,13 @@ app.post('/generate-caption', upload.single('image'), async (req, res) => {
     };
 
     const result = await model.generateContent(['Describe this image:', image]);
-    res.json({ caption: result.response.text() });
-
+    
     // Optionally, delete the uploaded file after processing
     fs.unlinkSync(imagePath);
+    return res.json({ caption: result.response.text() });
   } catch (error) {
     console.error('Error generating caption:', error);
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 });
 
