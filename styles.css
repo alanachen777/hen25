@@ -1,15 +1,16 @@
 /* styles.css */
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif; /* Changed to a more common, readable font */
-    margin: 0; /* Remove default body margins */
+    font-family:Verdana, Geneva, Tahoma, sans-serif; /* Changed to a more common, readable font */
+    margin: 10; /* Remove default body margins */
     color: #333; /* Dark gray text for better contrast */
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.5; /* Improved readability */
     background-color: #f4f4f4; /* Light gray background */
 }
 
 h1, h2, h3 {
-    font-family: 'Georgia', serif; /* Use a serif font for headings */
+    font-family: Garamond;
+    font-size:1.75rem;
     color: #222; /* Darker color for headings */
 }
 
@@ -123,35 +124,43 @@ section h1, section h2 {
 
 /* Image Upload */
 #fileInput {
-    padding: 20px 40px;
-    margin-bottom: 10px;
-    border: 1px solid #c8dbf9;
-    border-radius: 5px;
-    background-color:#2c3e50;
-    color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 60px 60px; /* Increase padding to make the box bigger */
+  border: 1px solid #c8dbf9;
+  border-radius: 5px;
+  background-color: #2c3e50;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px; /* Increase font size */
+  margin-bottom: 20px; /* Ensure there's space below the file input */
+  display: block; /* Make it a block element */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
-
-@keyframes pulse {
+  
+  @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
   }
-#uploadButton {
+  
+  #uploadButton {
     padding: 15px 18px;
     background-color: #3498db; /* Blue Button  */
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; 
+    border-color: #2c3e50;
+    border-radius: 10px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-#uploadButton:hover {
+    display: block; /* Make it a block element */
+    margin-top: 20px; /* Add space above the button */
+  }
+  
+  #uploadButton:hover {
     background-color: #c8dbf9; /* Darker blue on hover */
-    color:#2f7ab7;
-    animation: pulse 0.6s infinite
-}
+    color: #2f7ab7;
+    animation: pulse 0.6s infinite;
+    box-shadow: 0 3px #3498db;
+  }
+  
 
 #caption {
     margin-top: 10px;
